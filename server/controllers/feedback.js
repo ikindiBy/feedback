@@ -7,11 +7,10 @@ const Feedback = {
 
     if (params['org']) {
     const orgId = params['org'];
-
       try {
-        db.many("select fb.user_id, usr.username, fb.comment, fb.date, fb.\"hasResponse\", rfb.response  from public.feedback as fb " +
+        db.any("select fb.user_id, usr.username, fb.comment, fb.date, fb.\"hasResponse\", rfb.response  from public.feedback as fb " +
           "left join public.response_on_feedback as rfb on rfb.feedback_id = fb.id " +
-          "left join public.users as usr on usr.id = fb.user_id where fb.org_id = $1", [orgId])
+          "left join public.users as usr on usr.id = fb.user_id where fb.org_id = $1", orgId)
           .then(function (data) {
             res.send(data);
           })
