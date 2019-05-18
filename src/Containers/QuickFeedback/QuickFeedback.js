@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import "./QuickFeedback.css";
 import SearchForm from "../../Components/SearchForm";
 import ResultList from "../../Components/ResultList/ResultList";
-import Geolocation from "../../Components/Geolocation/Geolocation";
+import Geolocation from "../../Components/Geolocation";
 
 class QuickFeedback extends Component {
   render() {
