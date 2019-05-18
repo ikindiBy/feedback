@@ -5,6 +5,7 @@ import "./QuickFeedback.css";
 import SearchForm from "../../Components/SearchForm";
 import ResultList from "../../Components/ResultList/ResultList";
 import Geolocation from "../../Components/Geolocation";
+import { getLocation } from "../../actions/geolocationAction";
 
 class QuickFeedback extends Component {
   render() {
@@ -14,7 +15,7 @@ class QuickFeedback extends Component {
         <h3>Выберите организацию</h3>
         <SearchForm />
         <label>Выводить ближайшие организации</label>
-        <input type="checkbox" name="test" value="test"/>
+        <input type="checkbox" name="test" value="test" />
         <ResultList />
         <Geolocation />
       </div>
@@ -24,12 +25,14 @@ class QuickFeedback extends Component {
 
 function mapStateToProps(state) {
   return {
-    searchingWord: state.search.searchingWord
+    location: state.location
   };
 }
 
 function mapDispatchToProps(dispatch) {
-  return {};
+  return {
+    // getLocation: () => dispatch(getLocation())
+  };
 }
 
 export default connect(
