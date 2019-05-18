@@ -1,7 +1,7 @@
 export function organizations(
   state = {
     organizationsSet: [],
-    organizationsNearby: []
+    organizationsNearbySet: []
   },
   action
 ) {

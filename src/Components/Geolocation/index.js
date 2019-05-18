@@ -3,16 +3,6 @@ import { geolocated } from "react-geolocated";
 
 class Geolocation extends React.Component {
   render() {
-    const requestBody = {
-      location: {
-        latitude: this.props.coords ? this.props.coords.latitude : null,
-        longitude: this.props.coords ? this.props.coords.latitude : null
-      },
-      distance: 0.3
-    };
-
-    console.log(requestBody);
-
     return !this.props.isGeolocationAvailable ? (
       <div>Your browser does not support Geolocation</div>
     ) : !this.props.isGeolocationEnabled ? (

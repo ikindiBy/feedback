@@ -6,13 +6,13 @@ import Main from "./Containers/Main";
 import Footer from "./Containers/Footer";
 import QuickFeedback from "./Containers/QuickFeedback/QuickFeedback";
 import Geolocation from "./Components/Geolocation";
-import ListOfOrganizations from "./Components/ListOfOrganizations";
+import NearbyOrganizationsList from "./Components/NearbyOrganizationsList";
 
 function App() {
   return (
     <div className="App">
       <QuickFeedback />
-      <ListOfOrganizations />
+      <NearbyOrganizationsList />
       {/* <Header />
       <Main />
       <Footer /> */}
