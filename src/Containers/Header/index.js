@@ -2,6 +2,9 @@ import React, { Component } from "react";
 
 import "./Header.css";
 
+import SearchForm from "../../Components/SearchForm";
+import LogoHeader from "../../Components/LogoHeader";
+
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -9,7 +12,12 @@ class Header extends Component {
   }
 
   render() {
-    return <header>Header with search</header>;
+    return (
+      <header>
+        <LogoHeader />
+        <SearchForm />
+      </header>
+    );
   }
 }
 
