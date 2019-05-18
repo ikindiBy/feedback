@@ -1,3 +1,6 @@
 const SEARCH_LABEL = "Введите название организации...";
 const SEARCH_PLACEHOLDER = "... название организации...";
-export { SEARCH_LABEL, SEARCH_PLACEHOLDER };
+
+const URL_ALL_ORGS = "/organization/list";
+
+export { SEARCH_LABEL, SEARCH_PLACEHOLDER, URL_ALL_ORGS };
