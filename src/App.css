@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  --result-btn-color: #008CBA;
+  --result-btn-color-hover: #006080;
 }
 
 .App-logo {

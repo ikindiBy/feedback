@@ -1,24 +1,37 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { organizationsNearbyFetchData } from "../../actions/organizationsAction";
+import {
+  organizationsNearbyFetchData,
+  increaseDistance
+} from "../../actions/organizationsAction";
 import { URL_NEARBY_ORG } from "../../js/constants";
+import ResultItem from "../ResultItem/ResultItem";
+import "./NearbyOrganizationsList.css";
 
 class NearbyOrganizationsList extends Component {
+  currentDistance = 1;
+
   componentDidMount() {
-    this.props.fetchData(URL_NEARBY_ORG);
+    this.props.fetchData(URL_NEARBY_ORG, 1);
   }
 
-  // showListOrgs = () =>
-  //   this.props.setOrganizations.map(item => (
-  //     <h5 key={item.unn}>{item.name}</h5>
-  //   ));
+  showListOrgs = () => {
+    return this.props.setNearbyOrganizations.map(item => (
+      <ResultItem key={item.unn} organizationName={item.name} />
+    ));
+  };
+
+  onClick = () => {
+    this.props.increaseDistance(this.props.distance * 2);
+    this.props.fetchData(URL_NEARBY_ORG, this.props.distance);
+  };
 
   render() {
     return (
-      <div>
-        <h3>orgs: </h3>
-        {/* {this.showListOrgs()} */}
+      <div className="NearbyOrganizationsList">
+        <button onClick={this.onClick}>Увеличить радиус поиска</button>
+        {this.showListOrgs()}
       </div>
     );
   }
@@ -26,13 +39,16 @@ class NearbyOrganizationsList extends Component {
 
 function mapStateToProps(state) {
   return {
-    setNearbyOrganizations: state.organizations.organizationsNearbySet
+    setNearbyOrganizations: state.organizations.organizationsNearbySet,
+    distance: state.organizations.distance
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    fetchData: url => dispatch(organizationsNearbyFetchData(url))
+    fetchData: (url, distance) =>
+      dispatch(organizationsNearbyFetchData(url, distance)),
+    increaseDistance: distance => dispatch(increaseDistance(distance))
   };
 }
 

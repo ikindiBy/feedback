@@ -1,3 +1,6 @@
+//not used
+
+
 export function getLocation() {
   console.log("!!!!");
 

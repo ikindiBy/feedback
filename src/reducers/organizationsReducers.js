@@ -1,7 +1,8 @@
 export function organizations(
   state = {
     organizationsSet: [],
-    organizationsNearbySet: []
+    organizationsNearbySet: [],
+    distance: 1
   },
   action
 ) {
@@ -13,11 +14,16 @@ export function organizations(
         organizationsSet: action.payload
         // total: action.payload.total
       };
-      case "ORGANIZATIONS_NEARBY_FETCH_DATA_SUCCESS":
+    case "ORGANIZATIONS_NEARBY_FETCH_DATA_SUCCESS":
       return {
         ...state,
-        organizationsSet: action.payload
+        organizationsNearbySet: action.payload
         // total: action.payload.total
+      };
+    case "INCREASE_DISTANCE":
+      return {
+        ...state,
+        distance: action.payload
       };
     default:
       return state;

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import 'font-awesome/css/font-awesome.min.css';
 
 import "./ResultItem.css";
 
@@ -11,7 +12,7 @@ class ResultItem extends Component {
   render() {
     return (
       <div className="ResultItem">
-        <div>Администрация г.Витебска</div>
+        <div>{this.props.organizationName}</div>
         <div>
           <span className="fa fa-star checked" />
           <span className="fa fa-star checked" />

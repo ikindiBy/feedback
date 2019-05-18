@@ -17,13 +17,7 @@ const Organization = {
     }
   },
   getOrgsListByCoordinates: function(req, res) {
-    let params = req.body.body;
-
-    try {
-      params = JSON.parse(params);
-    } catch (e) {
-      res.status(400).send('BAD params');
-    }
+    let params = req.body;
 
     if (params["location"] && params["distance"]) {
       const location = params["location"],
@@ -31,7 +25,7 @@ const Organization = {
 
       try {
         db.many(
-          "SELECT id, name, addr as address, (6371 * acos( cos( radians($1) ) * cos( radians( CAST (coordx AS FLOAT) ) ) * " +
+          "SELECT id, unn, name, addr as address, (6371 * acos( cos( radians($1) ) * cos( radians( CAST (coordx AS FLOAT) ) ) * " +
             "cos( radians( CAST (coordy AS FLOAT) ) - radians($2) ) + sin( radians($1) ) * " +
             "sin( radians( CAST (coordx AS FLOAT) ) ) ) ) as dist FROM public.orgs",
           [location["latitude"], location["longitude"]]
