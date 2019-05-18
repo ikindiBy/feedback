@@ -1,6 +1,4 @@
 .ResultItem {
-    --result-btn-color: #008CBA;
-    --result-btn-color-hover: #006080;
     width: 80%;
     min-height: 70px;
     border: 1px var(--result-btn-color) solid;
