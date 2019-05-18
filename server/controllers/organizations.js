@@ -17,8 +17,14 @@ const Organization = {
     }
   },
   getOrgsListByCoordinates: function(req, res) {
-    const params = req.body;
-    console.log(req);
+    let params = req.body.body;
+
+    try {
+      params = JSON.parse(params);
+    } catch (e) {
+      res.status(400).send('BAD params');
+    }
+
     if (params["location"] && params["distance"]) {
       const location = params["location"],
         distance = params["distance"];
