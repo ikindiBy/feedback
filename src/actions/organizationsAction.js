@@ -6,6 +6,7 @@ export function organizationsFetchDataSuccess(data) {
 }
 
 export function organizationsFetchData(url) {
+  console.log("===== fetching data for orgs =====");
   return dispatch => {
     fetch(url)
       .then(response => {

@@ -17,7 +17,7 @@ class QuickFeedback extends Component {
         <label>Выводить ближайшие организации</label>
         <input type="checkbox" name="test" value="test" />
         <ResultList />
-        <Geolocation />
+        {/* <Geolocation /> */}
       </div>
     );
   }

@@ -1,0 +1,8 @@
+.checked {
+  color: rgb(165, 165, 165);
+}
+
+i,
+i:hover {
+  color: rgb(202, 186, 39);
+}

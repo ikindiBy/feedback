@@ -1,0 +1,24 @@
+form {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rating-cases {
+  width: 100%;
+}
+
+.descriptionFeedback {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.personal-data {
+  width: 50%;
+  margin-bottom: 15px;
+}
