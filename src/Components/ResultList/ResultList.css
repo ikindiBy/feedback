@@ -1,0 +1,4 @@
+.ResultList {
+    display: flex;
+    flex-direction: column;
+}

@@ -4,12 +4,12 @@ import "./App.css";
 import Header from "./Containers/Header";
 import Main from "./Containers/Main";
 import Footer from "./Containers/Footer";
-import Geolocation from "./Components/Geolocation/Geolocation";
+import QuickFeedback from "./Containers/QuickFeedback/QuickFeedback";
 
 function App() {
   return (
     <div className="App">
-      <Geolocation />
+      <QuickFeedback />
       {/* <Header />
       <Main />
       <Footer /> */}
