@@ -24,9 +24,9 @@ const Organization = {
           distance = params['distance'];
 
       try {
-        db.many("SELECT id, name, addr as address, (round(6371 * acos( cos( radians($1) ) * cos( radians( CAST (coordx AS FLOAT) ) ) * " +
+        db.many("SELECT id, name, addr as address, (6371 * acos( cos( radians($1) ) * cos( radians( CAST (coordx AS FLOAT) ) ) * " +
           "cos( radians( CAST (coordy AS FLOAT) ) - radians($2) ) + sin( radians($1) ) * " +
-          "sin( radians( CAST (coordx AS FLOAT) ) ) ) , 2)) as dist FROM public.orgs", [location['latitude'], location['longitude']])
+          "sin( radians( CAST (coordx AS FLOAT) ) ) ) ) as dist FROM public.orgs", [location['latitude'], location['longitude']])
           .then(function (data) {
             const filteredByDistance = data.filter(function (org) {
               return org['dist'] <= distance;
