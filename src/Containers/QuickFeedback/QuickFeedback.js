@@ -3,20 +3,16 @@ import { connect } from "react-redux";
 
 import "./QuickFeedback.css";
 import SearchForm from "../../Components/SearchForm";
-import ResultList from "../../Components/ResultList/ResultList";
-import Geolocation from "../../Components/Geolocation";
-import { getLocation } from "../../actions/geolocationAction";
+import OraganizationTabs from "../../Components/OrganizationTabs";
 
 class QuickFeedback extends Component {
   render() {
     return (
       <div>
-        <h2>Мой отзыв для</h2>
-        <h3>Выберите организацию</h3>
-        <SearchForm />
-        <label>Выводить ближайшие организации</label>
-        <input type="checkbox" name="test" value="test" />
-        <ResultList />
+        <h2>Мой отзыв</h2>
+        {/* <h3>Выберите организацию</h3> */}
+        {/* <SearchForm /> */}
+        <OraganizationTabs />
         {/* <Geolocation /> */}
       </div>
     );

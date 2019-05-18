@@ -6,7 +6,6 @@ export function organizationsFetchDataSuccess(data) {
 }
 
 export function organizationsFetchData(url) {
-  console.log("===== fetching data for orgs =====");
   return dispatch => {
     fetch(url)
       .then(response => {
@@ -28,7 +27,7 @@ export function organizationsNearbyFetchDataSuccess(data) {
   };
 }
 
-export function organizationsNearbyFetchData(url) {
+export function organizationsNearbyFetchData(url, distance) {
   return dispatch => {
     navigator.geolocation.getCurrentPosition(position => {
       fetch(url, {
@@ -42,7 +41,7 @@ export function organizationsNearbyFetchData(url) {
             latitude: position.coords.latitude,
             longitude: position.coords.longitude
           },
-          distance: 1
+          distance: distance
         })
       })
         .then(response => {
@@ -55,5 +54,13 @@ export function organizationsNearbyFetchData(url) {
         .then(data => dispatch(organizationsNearbyFetchDataSuccess(data)))
         .catch(() => {});
     });
+  };
+}
+
+
+export function increaseDistance(distance) {
+  return {
+    type: "INCREASE_DISTANCE",
+    payload: distance
   };
 }

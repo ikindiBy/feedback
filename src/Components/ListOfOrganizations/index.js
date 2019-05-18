@@ -3,24 +3,21 @@ import { connect } from "react-redux";
 
 import { organizationsFetchData } from "../../actions/organizationsAction";
 import { URL_ALL_ORGS } from "../../js/constants";
+import ResultItem from "../ResultItem/ResultItem";
 
 class ListOfOrganizations extends Component {
   componentDidMount() {
     this.props.fetchData(URL_ALL_ORGS);
   }
 
-  showListOrgs = () =>
-    this.props.setOrganizations.map(item => (
-      <h5 key={item.unn}>{item.name}</h5>
+  showListOrgs = () => {
+    return this.props.setOrganizations.map(item => (
+      <ResultItem key={item.unn} organizationName={item.name} />
     ));
+  };
 
   render() {
-    return (
-      <div>
-        <h3>orgs: </h3>
-        {this.showListOrgs()}
-      </div>
-    );
+    return <div>{this.showListOrgs()}</div>;
   }
 }
 
