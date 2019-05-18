@@ -4,6 +4,7 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const organizationRouter = require('./controllers/organizations');
+const authRouter = require('./controllers/auth');
 
 const app = express();
 
@@ -20,5 +21,6 @@ app.get('/', (req, res) => {
 });
 
 app.use(organizationRouter);
+app.use(authRouter);
 
 module.exports = app;
