@@ -5,16 +5,15 @@ import "./QuickFeedback.css";
 import SearchForm from "../../Components/SearchForm";
 import OraganizationTabs from "../../Components/OrganizationTabs";
 import Header from "../../Containers/Header";
+import Footer from "../../Containers/Footer";
 
 class QuickFeedback extends Component {
   render() {
     return (
       <div>
-        {/* <h3>Выберите организацию</h3> */}
-        {/* <SearchForm /> */}
         <Header heading="Оставить отзыв" />
         <OraganizationTabs />
-        {/* <Geolocation /> */}
+        {/* <Footer /> */}
       </div>
     );
   }

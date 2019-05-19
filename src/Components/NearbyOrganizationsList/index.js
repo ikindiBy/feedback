@@ -35,7 +35,11 @@ class NearbyOrganizationsList extends Component {
   render() {
     return (
       <div className="NearbyOrganizationsList">
-        <button onClick={this.onClick}>Увеличить радиус поиска</button>
+        <div className="NavigationBtnWrapper">
+          <button className="NavigationBtn" onClick={this.onClick}>
+            Увеличить радиус поиска
+          </button>
+        </div>
         {this.showListOrgs()}
       </div>
     );

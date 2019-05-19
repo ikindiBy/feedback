@@ -22,7 +22,9 @@ class ResultItem extends Component {
           <div>{nameOfOrganization}</div>
         </Link>
         <Stars score={1 + Math.random() * 5} />
-        <div>{Math.round(10 * Math.random())} reviews</div>
+        <div className="ReviewWrapper">
+          <p className="Review">{Math.round(10 * Math.random())} отзывов</p>
+        </div>
         <div>
           <Link to={`/feedback/${idOfOrganization}/${nameOfOrganization}`}>
             <button>Оставить отзыв</button>
