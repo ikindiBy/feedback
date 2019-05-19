@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-// import "font-awesome/css/font-awesome.min.css";
 
 import "./ResultItem.css";
 import Stars from "../Stars";
@@ -12,19 +11,20 @@ class ResultItem extends Component {
   }
 
   render() {
+    const idOfOrganization =
+      (this.props.organization && this.props.organization.id) || this.props.id;
+    const nameOfOrganization =
+      (this.props.organization && this.props.organization.name) ||
+      this.props.organizationName;
     return (
       <div className="ResultItem">
-        <Link to={`/description/${this.props.organization.id}`}>
-          <div>{this.props.organizationName}</div>
+        <Link to={`/description/${idOfOrganization}`}>
+          <div>{nameOfOrganization}</div>
         </Link>
         <Stars score={1 + Math.random() * 5} />
-        <div>12 reviews</div>
+        <div>{Math.round(10 * Math.random())} reviews</div>
         <div>
-          <Link
-            to={`/feedback/${this.props.organization.id}/${
-              this.props.organization.name
-            }`}
-          >
+          <Link to={`/feedback/${idOfOrganization}/${nameOfOrganization}`}>
             <button>Оставить отзыв</button>
           </Link>
         </div>
