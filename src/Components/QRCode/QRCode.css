@@ -1,0 +1,30 @@
+.QRCodeComponent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    padding: 20px;
+}
+
+.QRCodeComponent h1 {
+    margin: 30px auto 40px auto;
+    text-align: center;
+}
+
+.QRCodeComponent h2 {
+    font-size: 20px;
+    text-align: center;
+    margin: -5px auto 40px auto;
+}
+
+.QRCodeComponent h3 {
+    font-size: 19px;
+    text-align: center;
+    margin: 20px auto 30px auto;
+}
+
+.QRCodeComponent span {
+    color: blue;
+    text-decoration: underline;
+}
