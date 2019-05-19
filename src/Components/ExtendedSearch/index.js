@@ -30,13 +30,14 @@ class ExtendedSearch extends Component {
 
     return (
       <div className="ExtendedSearch">
-        <label>Категория</label>
-        <Dropdown
-          options={organizationsMock}
-          onChange={this._onSelect}
-          value={defaultOption}
-          placeholder="Select an option"
-        />
+        <div className="DropdownWrapper">
+          <Dropdown
+            options={organizationsMock}
+            onChange={this._onSelect}
+            value={defaultOption}
+            placeholder="Select an option"
+          />
+        </div>
         {this.state.mock ? this.showListOrgs() : <LimitedOrganizationsList />}
       </div>
     );
