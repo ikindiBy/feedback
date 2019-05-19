@@ -2,8 +2,56 @@ const router = require('express').Router();
 const db = require('../db/db');
 
 const Feedback = {
+  addNewFeedbackOnOrgByUser: function (req, res) {
+    const params = req.body;
+
+    if (params['org'] && params['user'] && params['rate_1'] && params['rate_2'] && params['rate_3']) {
+      try {
+        db.any("INSERT INTO public.feedback (user_id, org_id, comment, quest_1, quest_2, quest_3, \"hasResponse\") " +
+          "VALUES ($1, $2, $3, $4, $5, $6, $7)",
+            [params['user'], params['org'], params['comment'], params['rate_1'], params['rate_2'], params['rate_3'], false])
+          .then(function (data) {
+            res.send(data);
+          })
+          .catch(function (error) {
+            res.status(500).send(error.message)
+          });
+      } catch (e) {
+        res.status(500).send(error.message)
+      }
+    } else {
+      res.status(400).send({error: 'Bad params'});
+    }
+  },
+  addNewResponseOnFeedback: function (req, res) {
+    const params = req.body;
+
+    if (params['user'] && params['response'] && params['feedback_id']) {
+      try {
+        db.any("INSERT INTO public.response_on_feedback (user_id, response, feedback_id) " +
+          "VALUES ($1, $2, $3)",
+          [params['user'], params['response'], params['feedback_id']])
+          .then(function (data) {
+            db.any("UPDATE public.feedback set \"hasResponse\" = true where id = $1", params['feedback_id'])
+              .then(function (data) {
+                res.send(data);
+            })
+              .catch(function (error) {
+              res.status(500).send(error.message)
+            });
+          })
+          .catch(function (error) {
+            res.status(500).send(error.message)
+          });
+      } catch (e) {
+        res.status(500).send(error.message)
+      }
+    } else {
+      res.status(400).send({error: 'Bad params'});
+    }
+  },
   getOrgFeedbackListByOrg: function (req, res) {
-    const params =req.body;
+    const params = req.body;
 
     if (params['org']) {
     const orgId = params['org'];
@@ -27,5 +75,7 @@ const Feedback = {
 };
 
 router.post('/feedback/list', Feedback.getOrgFeedbackListByOrg);
+router.post('/feedback/new', Feedback.addNewFeedbackOnOrgByUser);
+router.post('/feedback/response', Feedback.addNewResponseOnFeedback);
 
 module.exports = router;
