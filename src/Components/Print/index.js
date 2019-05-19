@@ -8,7 +8,7 @@ class Print extends React.Component {
   render() {
     const printedComponent = (
       <QRCodeComponent
-        size="300"
+        size="280"
         id={this.props.id}
         organizationName={this.props.organizationName}
         ref={el => (this.componentRef = el)}
