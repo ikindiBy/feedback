@@ -15,7 +15,6 @@ class DescriptionPage extends Component {
   }
 
   componentDidMount = () => {
-    console.log("*****>> ", this.props.match.params.id);
     const idForOrg = +this.props.match.params.id;
     const url = "/organization/read/";
     fetch(url, {
@@ -44,7 +43,6 @@ class DescriptionPage extends Component {
 
   render() {
     console.log("--______", this.state.org);
-
     const {
       id,
       name,
@@ -88,13 +86,17 @@ class DescriptionPage extends Component {
         </div>
 
         {this.renderComments(feedbacks)}
-
-        <Link to={`/feedback/${id}/${name}`}>
-          <span>Оценить организацию</span>
-        </Link>
-        <Link to={`/`}>
-          <span>Вернуться на главную</span>
-        </Link>
+        <div className="navigation">
+          <Link to={`/feedback/${id}/${name}`}>
+            <span>Оценить организацию</span>
+          </Link>
+          <Link to={`/`}>
+            <i class="fa fa-home fa-2x" aria-hidden="true" />
+          </Link>
+          <Link to={`/QRmaker/${id}/${name}`}>
+            <span>Создать QR-code</span>
+          </Link>
+        </div>
       </div>
     );
   }

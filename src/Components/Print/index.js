@@ -6,11 +6,12 @@ import "./Print.css";
 
 class Print extends React.Component {
   render() {
+    const { id, name } = this.props.match.params;
     const printedComponent = (
       <QRCodeComponent
         size="300"
-        id={this.props.id}
-        organizationName={this.props.organizationName}
+        id={+id}
+        organizationName={name}
         ref={el => (this.componentRef = el)}
       />
     );

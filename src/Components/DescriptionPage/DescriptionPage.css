@@ -3,6 +3,16 @@
   width: 60%;
 }
 
-a {
+.description a {
   margin: 10px;
+}
+
+.navigation i {
+  color: #000;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
