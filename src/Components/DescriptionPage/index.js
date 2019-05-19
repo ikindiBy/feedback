@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import FeedbackItem from '../Feedback';
+import FeedbackItem from "../Feedback";
 
 import "./DescriptionPage.css";
 
@@ -92,7 +92,7 @@ class DescriptionPage extends Component {
             <span>Оценить организацию</span>
           </Link>
           <Link to={`/`}>
-            <i class="fa fa-home fa-2x" aria-hidden="true" />
+            <i className="fa fa-home fa-2x" aria-hidden="true" />
           </Link>
           <Link to={`/QRmaker/${id}/${name}`}>
             <span>Создать QR-code</span>

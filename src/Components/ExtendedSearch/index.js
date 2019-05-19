@@ -21,7 +21,7 @@ class ExtendedSearch extends Component {
 
   showListOrgs = () => {
     return urPomoschMock.map(item => (
-      <ResultItem key={item.unn} organizationName={item.name} />
+      <ResultItem key={item.unn} organizationName={item.name} id={item.id} />
     ));
   };
 
