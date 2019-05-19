@@ -23,14 +23,3 @@
 .Print button:hover {
     background-color: var( --result-btn-color-hover);
 }
-
-.Print div:last-child {
-    border: 1px solid;
-    width: 95%;
-    height: 100%;
-}
-
-.Print span {
-    color: blue;
-    text-decoration: underline;
-}

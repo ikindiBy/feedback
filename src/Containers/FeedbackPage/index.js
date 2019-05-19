@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import "./FeedbackPage.css";
 
 import RatingCase from "../../Components/RatingCase";
+import Print from "../../Components/Print";
 
 class FeedbackPage extends Component {
   constructor(props) {
@@ -86,6 +87,10 @@ class FeedbackPage extends Component {
   render() {
     console.log("------> ", this.state.overalEstimation);
     return (
+//       <Print
+//         organizationName="Главное управление юстиции Минского городского исполнительного комитета"
+//         id="38270"
+//       />
       <div>
         <h2>Мой отзыв о {this.props.match.params.name}</h2>
         <form onSubmit={this.handleSubmit}>
@@ -122,15 +127,14 @@ class FeedbackPage extends Component {
               name="textarea"
               rows="10"
               cols="50"
-              onChange={this.handleDescriptionChange}
-              value={this.state.description}
+              onChange={this.handleMailChange}
             />
           </div>
           <div className="personal-data">
             <label>Ваше имя</label>
             <input
               type="text"
-              value={this.state.userName}
+              //   value={"sdsd"}
               onChange={this.handleNameChange}
               placeholder="Иван Иванов"
             />
@@ -139,17 +143,18 @@ class FeedbackPage extends Component {
             <label>e-mail</label>
             <input
               type="email"
-              value={this.state.email}
+              //   value={"sdsd"}
               onChange={this.handleMailChange}
               placeholder="some@mail.ru"
             />
           </div>
           <button>Отправить отзыв</button>
           <Link to={`/`}>
-            <span>Вернуться на главную</span>
+            <button type="submit">Вернуться на главную</button>
           </Link>
         </form>
       </div>
+
     );
   }
 }
