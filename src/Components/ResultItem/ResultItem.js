@@ -14,7 +14,9 @@ class ResultItem extends Component {
   render() {
     return (
       <div className="ResultItem">
-        <div>{this.props.organizationName}</div>
+        <Link to={`/description/${this.props.organizationName}`}>
+          <div>{this.props.organizationName}</div>
+        </Link>
         <Stars score={1 + Math.random() * 5} />
         <div>12 reviews</div>
         <div>
