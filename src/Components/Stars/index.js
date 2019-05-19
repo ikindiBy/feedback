@@ -28,6 +28,7 @@ class Stars extends React.Component {
 
   handleClick = scr => {
     this.setState({ score: scr });
+    this.props.setScore(scr);
   };
 
   renderScore = () => {
