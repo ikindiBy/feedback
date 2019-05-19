@@ -3,14 +3,27 @@ import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 
 import "./ExtendedSearch.css";
-import { organizationsMock } from "./mock";
-import ListOfOrganizations from "../ListOfOrganizations";
+import { organizationsMock, urPomoschMock } from "./mock";
+import LimitedOrganizationsList from "../LimitedOrganizationsList";
+import ResultItem from "../ResultItem/ResultItem";
 
 class ExtendedSearch extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      mock: true
+    };
   }
+
+  _onSelect = () => {
+    this.setState({ mock: false });
+  };
+
+  showListOrgs = () => {
+    return urPomoschMock.map(item => (
+      <ResultItem key={item.unn} organizationName={item.name} />
+    ));
+  };
 
   render() {
     const defaultOption = organizationsMock[0];
@@ -24,8 +37,7 @@ class ExtendedSearch extends Component {
           value={defaultOption}
           placeholder="Select an option"
         />
-
-        <ListOfOrganizations/>
+        {this.state.mock ? this.showListOrgs() : <LimitedOrganizationsList />}
       </div>
     );
   }
