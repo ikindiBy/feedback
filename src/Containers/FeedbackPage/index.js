@@ -33,6 +33,7 @@ class FeedbackPage extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const url = "/feedback/new";
+    const id = +this.props.match.params.id;
     fetch(url, {
       method: "POST",
       headers: {
@@ -40,7 +41,7 @@ class FeedbackPage extends Component {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        org: 250,
+        org: id,
         // user: 2,
         overalEstimation: this.state.ratingCommon,
         difficultingProc: this.state.ratingComplexity,
@@ -50,13 +51,25 @@ class FeedbackPage extends Component {
         username: this.state.userName,
         email: this.state.email
       })
-    }).then(da => console.log("==============", da));
+    });
+    this.setState({
+      userName: "",
+      email: "",
+      description: "",
+      ratingCommon: 1,
+      ratingComplexity: 1,
+      ratingSpeed: 1,
+      ratingPolitiness: 1
+    });
   };
   handleNameChange = e => {
     this.setState({ userName: e.target.value });
   };
   handleMailChange = e => {
     this.setState({ email: e.target.value });
+  };
+  handleDescriptionChange = e => {
+    this.setState({ description: e.target.value });
   };
   setCommonScore = score => {
     this.setState({ overalEstimation: score });
@@ -109,14 +122,15 @@ class FeedbackPage extends Component {
               name="textarea"
               rows="10"
               cols="50"
-              onChange={this.handleMailChange}
+              onChange={this.handleDescriptionChange}
+              value={this.state.description}
             />
           </div>
           <div className="personal-data">
             <label>Ваше имя</label>
             <input
               type="text"
-              //   value={"sdsd"}
+              value={this.state.userName}
               onChange={this.handleNameChange}
               placeholder="Иван Иванов"
             />
@@ -125,14 +139,14 @@ class FeedbackPage extends Component {
             <label>e-mail</label>
             <input
               type="email"
-              //   value={"sdsd"}
+              value={this.state.email}
               onChange={this.handleMailChange}
               placeholder="some@mail.ru"
             />
           </div>
           <button>Отправить отзыв</button>
           <Link to={`/`}>
-            <button type="submit">Вернуться на главную</button>
+            <span>Вернуться на главную</span>
           </Link>
         </form>
       </div>
