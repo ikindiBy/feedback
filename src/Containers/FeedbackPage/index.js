@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 
 import "./FeedbackPage.css";
@@ -10,9 +11,10 @@ class FeedbackPage extends Component {
   handleNameChange = () => {};
   handleMailChange = () => {};
   render() {
+    console.log(this.props.match.params.name);
     return (
       <div>
-        <h1>Мой отзыв о ....</h1>
+        <h2>Мой отзыв о {this.props.match.params.name}</h2>
         <form onSubmit={this.handleSubmit}>
           <div className="rating-cases">
             <RatingCase pointForEstimation={"Общая оценка"} point={1} />
