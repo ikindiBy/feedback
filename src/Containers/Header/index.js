@@ -14,8 +14,11 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <LogoHeader />
-        <SearchForm />
+        <div className="AppName">
+          Портал рейтинговой оценки качества оказания услуг организациями
+          Республики Беларусь
+        </div>
+        <h2>Оставить отзыв</h2>
       </header>
     );
   }

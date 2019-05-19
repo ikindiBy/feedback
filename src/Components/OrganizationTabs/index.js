@@ -4,15 +4,16 @@ import "react-tabs/style/react-tabs.css";
 
 import NearbyOrganizationsList from "../NearbyOrganizationsList";
 import ExtendedSearch from "../ExtendedSearch";
+import "./OrganizationTabs.css";
 
 const OraganizationTabs = () => (
   <Tabs>
-    <TabList>
+    <TabList className="TabList">
       <Tab>Ближайшие организации</Tab>
       <Tab>Расширенный поиск</Tab>
     </TabList>
 
-    <TabPanel>
+    <TabPanel className="TabPanel">
       <NearbyOrganizationsList />
     </TabPanel>
     <TabPanel>

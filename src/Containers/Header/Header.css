@@ -1,11 +1,27 @@
 header {
-  margin: 0 auto;
-  width: 80%;
-  height: 200px;
-  background-color: rgb(146, 230, 90);
-
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  flex-direction: row;
   align-items: center;
+  height: 75px;
+  background-color: #51B788;
+}
+
+.AppName {
+  height: 36px;
+  width: 210px;
+  color: #ADFCD7;
+  font-family: "Source Sans Pro";
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 12px;
+  position: absolute;
+  left: 20px;
+  text-align: left;
+}
+
+h2 {
+  justify-self: center;
+  margin: 0 auto;
+  color: white;
+  font-family: "Source Sans Pro";
 }

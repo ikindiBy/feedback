@@ -1,1 +1,22 @@
+.TabList {
+    background-color: #51B788;
+    margin: 0;
+}
 
+.TabList li {
+    width: 300px;
+    color: white;
+    color: #ADFCD7;
+    font-family: "Source Sans Pro";
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.TabList li.react-tabs__tab--selected {
+    color: rgba(34, 34, 34, 0.87);
+    background-color: #F2F3F7;
+}
+
+.TabPanel {
+    background-color: #F2F3F7;
+}
