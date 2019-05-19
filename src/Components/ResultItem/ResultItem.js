@@ -14,13 +14,17 @@ class ResultItem extends Component {
   render() {
     return (
       <div className="ResultItem">
-        <Link to={`/description/${this.props.organizationName}`}>
+        <Link to={`/description/${this.props.organization.id}`}>
           <div>{this.props.organizationName}</div>
         </Link>
         <Stars score={1 + Math.random() * 5} />
         <div>12 reviews</div>
         <div>
-          <Link to={`/feedback/${this.props.organizationName}`}>
+          <Link
+            to={`/feedback/${this.props.organization.id}/${
+              this.props.organization.name
+            }`}
+          >
             <button>Оставить отзыв</button>
           </Link>
         </div>

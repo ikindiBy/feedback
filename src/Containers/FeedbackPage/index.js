@@ -34,6 +34,7 @@ class FeedbackPage extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const url = "/feedback/new";
+    const id = +this.props.match.params.id;
     fetch(url, {
       method: "POST",
       headers: {
@@ -41,7 +42,7 @@ class FeedbackPage extends Component {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        org: 250,
+        org: id,
         // user: 2,
         overalEstimation: this.state.ratingCommon,
         difficultingProc: this.state.ratingComplexity,
@@ -51,13 +52,25 @@ class FeedbackPage extends Component {
         username: this.state.userName,
         email: this.state.email
       })
-    }).then(da => console.log("==============", da));
+    });
+    this.setState({
+      userName: "",
+      email: "",
+      description: "",
+      ratingCommon: 1,
+      ratingComplexity: 1,
+      ratingSpeed: 1,
+      ratingPolitiness: 1
+    });
   };
   handleNameChange = e => {
     this.setState({ userName: e.target.value });
   };
   handleMailChange = e => {
     this.setState({ email: e.target.value });
+  };
+  handleDescriptionChange = e => {
+    this.setState({ description: e.target.value });
   };
   setCommonScore = score => {
     this.setState({ overalEstimation: score });
@@ -74,73 +87,74 @@ class FeedbackPage extends Component {
   render() {
     console.log("------> ", this.state.overalEstimation);
     return (
-      <Print
-        organizationName="Главное управление юстиции Минского городского исполнительного комитета"
-        id="38270"
-      />
-      // <div>
-      //   <h2>Мой отзыв о {this.props.match.params.name}</h2>
-      //   <form onSubmit={this.handleSubmit}>
-      //     <div className="rating-cases">
-      //       <RatingCase
-      //         pointForEstimation={"Общая оценка"}
-      //         point={1}
-      //         setScore={this.setCommonScore}
-      //       />
-      //       <RatingCase
-      //         pointForEstimation={"Простота процесса"}
-      //         point={2}
-      //         setScore={this.setComplexityScore}
-      //       />
-      //       <RatingCase
-      //         pointForEstimation={"Скорость отзыва"}
-      //         point={3}
-      //         setScore={this.setSpeedScore}
-      //       />
-      //       <RatingCase
-      //         pointForEstimation={"Вежливость"}
-      //         point={4}
-      //         setScore={this.setPolitinessScore}
-      //       />
-      //     </div>
-      //     {/* <div>
-      //       <p>Вы бы порекомендовали друзьям обращаться в эту организацию?</p>
-      //       <button>да</button>
-      //       <button>нет</button>
-      //     </div> */}
-      //     <div className="descriptionFeedback">
-      //       <label>Расскажите подробнее</label>
-      //       <textarea
-      //         name="textarea"
-      //         rows="10"
-      //         cols="50"
-      //         onChange={this.handleMailChange}
-      //       />
-      //     </div>
-      //     <div className="personal-data">
-      //       <label>Ваше имя</label>
-      //       <input
-      //         type="text"
-      //         //   value={"sdsd"}
-      //         onChange={this.handleNameChange}
-      //         placeholder="Иван Иванов"
-      //       />
-      //     </div>
-      //     <div className="personal-data">
-      //       <label>e-mail</label>
-      //       <input
-      //         type="email"
-      //         //   value={"sdsd"}
-      //         onChange={this.handleMailChange}
-      //         placeholder="some@mail.ru"
-      //       />
-      //     </div>
-      //     <button>Отправить отзыв</button>
-      //     <Link to={`/`}>
-      //       <button type="submit">Вернуться на главную</button>
-      //     </Link>
-      //   </form>
-      // </div>
+//       <Print
+//         organizationName="Главное управление юстиции Минского городского исполнительного комитета"
+//         id="38270"
+//       />
+      <div>
+        <h2>Мой отзыв о {this.props.match.params.name}</h2>
+        <form onSubmit={this.handleSubmit}>
+          <div className="rating-cases">
+            <RatingCase
+              pointForEstimation={"Общая оценка"}
+              point={1}
+              setScore={this.setCommonScore}
+            />
+            <RatingCase
+              pointForEstimation={"Простота процесса"}
+              point={2}
+              setScore={this.setComplexityScore}
+            />
+            <RatingCase
+              pointForEstimation={"Скорость отзыва"}
+              point={3}
+              setScore={this.setSpeedScore}
+            />
+            <RatingCase
+              pointForEstimation={"Вежливость"}
+              point={4}
+              setScore={this.setPolitinessScore}
+            />
+          </div>
+          {/* <div>
+            <p>Вы бы порекомендовали друзьям обращаться в эту организацию?</p>
+            <button>да</button>
+            <button>нет</button>
+          </div> */}
+          <div className="descriptionFeedback">
+            <label>Расскажите подробнее</label>
+            <textarea
+              name="textarea"
+              rows="10"
+              cols="50"
+              onChange={this.handleMailChange}
+            />
+          </div>
+          <div className="personal-data">
+            <label>Ваше имя</label>
+            <input
+              type="text"
+              //   value={"sdsd"}
+              onChange={this.handleNameChange}
+              placeholder="Иван Иванов"
+            />
+          </div>
+          <div className="personal-data">
+            <label>e-mail</label>
+            <input
+              type="email"
+              //   value={"sdsd"}
+              onChange={this.handleMailChange}
+              placeholder="some@mail.ru"
+            />
+          </div>
+          <button>Отправить отзыв</button>
+          <Link to={`/`}>
+            <button type="submit">Вернуться на главную</button>
+          </Link>
+        </form>
+      </div>
+
     );
   }
 }

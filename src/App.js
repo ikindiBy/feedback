@@ -9,6 +9,8 @@ import QuickFeedback from "./Containers/QuickFeedback/QuickFeedback";
 import Geolocation from "./Components/Geolocation";
 import FeedbackPage from "./Containers/FeedbackPage";
 import NotFound from "./Components/NotFound";
+import DescriptionPage from "./Components/DescriptionPage";
+import Print from "./Components/Print";
 
 function App() {
   return (
@@ -16,8 +18,9 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={QuickFeedback} />
-          <Route path="/feedback/:name" component={FeedbackPage} />
-          <Route path="/description" component={QuickFeedback} />
+          <Route path="/feedback/:id/:name" component={FeedbackPage} />
+          <Route path="/description/:id" component={DescriptionPage} />
+          <Route path="/QRmaker/:id/:name" component={Print} />
           <Route path="*" component={NotFound} />
         </Switch>
       </BrowserRouter>

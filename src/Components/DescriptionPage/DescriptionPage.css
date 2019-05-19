@@ -1,0 +1,18 @@
+.description .rating-cases {
+  margin: 0 auto;
+  width: 60%;
+}
+
+.description a {
+  margin: 10px;
+}
+
+.navigation i {
+  color: #000;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -17,8 +17,13 @@ class NearbyOrganizationsList extends Component {
   }
 
   showListOrgs = () => {
+    console.log("-----------", this.props.setNearbyOrganizations);
     return this.props.setNearbyOrganizations.map(item => (
-      <ResultItem key={item.unn} organizationName={item.name} />
+      <ResultItem
+        key={item.unn}
+        organizationName={item.name}
+        organization={item}
+      />
     ));
   };
 
