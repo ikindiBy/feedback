@@ -68,7 +68,7 @@ const Organization = {
             if (data.length) {
               try {
                 db.any(
-                  "select fb.user_id, usr.username as logged_user, fb.user_name as quick_fb_username, email, " +
+                  "select fb.id, fb.user_id, usr.username as logged_user, fb.user_name as quick_fb_username, email, " +
                     'fb.comment, array[fb."overalEstimation", fb."difficultingProc", ' +
                     'fb.speed, fb.polite] as rates, fb."hasRecommended", ' +
                     'fb.date, fb."hasResponse", rfb.response, rfb.date as response_date  from public.feedback as fb ' +
