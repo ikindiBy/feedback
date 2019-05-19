@@ -9,7 +9,7 @@ class QuickFeedback extends Component {
   render() {
     return (
       <div>
-        <h2>Мой отзыв</h2>
+        <h2>Оставить отзыв</h2>
         {/* <h3>Выберите организацию</h3> */}
         {/* <SearchForm /> */}
         <OraganizationTabs />

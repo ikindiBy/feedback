@@ -5,26 +5,119 @@
     align-items: center;
     height: 90%;
     padding: 20px;
+    border: 25px solid #F34C4C;
+    margin-top: 3px;
+}
+
+.QRWrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 380px;
+}
+
+.QRWrapperRow {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60px;
+}
+
+.QRCode {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.QRWrapperItem1 {
+    height: 60px;
+    width: 60px;
+    border-top: 2px solid #43C7F2;
+    border-left: 2px solid #43C7F2;
+}
+
+.QRWrapperItem2 {
+    height: 60px;
+    width: 60px;
+    border-bottom: 2px solid #43C7F2;
+    border-left: 2px solid #43C7F2;
+}
+
+.QRWrapperItem3 {
+    height: 60px;
+    width: 60px;
+    border-top: 2px solid #43C7F2;
+    border-right: 2px solid #43C7F2;
+}
+
+.QRWrapperItem4 {
+    height: 60px;
+    width: 60px;
+    border-bottom: 2px solid #43C7F2;
+    border-right: 2px solid #43C7F2;
 }
 
 .QRCodeComponent h1 {
-    margin: 30px auto 40px auto;
-    text-align: center;
+    /* margin: 30px auto 40px auto;
+    text-align: center; */
+    height: 122px;
+    width: 412px;
+    color: rgba(34, 34, 34, 0.87);
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 56px;
+    font-weight: 900;
+    line-height: 61px;
 }
 
 .QRCodeComponent h2 {
-    font-size: 20px;
-    text-align: center;
-    margin: -5px auto 40px auto;
+    height: 50px;
+    width: 207px;
+    color: rgba(34, 34, 34, 0.87);
+    font-family: "Source Sans Pro";
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 25px;
 }
 
-.QRCodeComponent h3 {
-    font-size: 19px;
+.NoteTextWrapper h3 {
+    height: 38px;
+    width: 400px;
+    color: rgba(34, 34, 34, 0.87);
+    font-family: "Source Sans Pro";
+    font-size: 17px;
+    line-height: 19px;
+    font-weight: 500;
+    margin-left: 10px;
     text-align: center;
-    margin: 20px auto 30px auto;
 }
 
-.QRCodeComponent span {
-    color: blue;
+.NoteTextWrapper span {
+    color: #3B7EF5;
+    font-family: "Source Sans Pro";
+    font-size: 17px;
+    line-height: 19px;
     text-decoration: underline;
+}
+
+.SnanTextWrapper {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    align-items: center;
+}
+
+.SnanTextWrapper img {
+    height: 54px;
+    width: 54px;
+}
+
+.NoteTextWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.NoteTextWrapper img {
+    height: 37px;
+    width: 37px;
 }

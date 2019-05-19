@@ -16,3 +16,9 @@
   align-items: center;
   justify-content: center;
 }
+
+@media (min-width: 600px) {
+  .description .rating-cases {
+    width: 90%;
+  }
+}
