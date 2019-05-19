@@ -4,20 +4,15 @@ import { connect } from "react-redux";
 import "./QuickFeedback.css";
 import SearchForm from "../../Components/SearchForm";
 import OraganizationTabs from "../../Components/OrganizationTabs";
+import Header from "../../Containers/Header";
 
 class QuickFeedback extends Component {
   render() {
     return (
       <div>
-        <header>
-          <div className="AppName">
-            Портал рейтинговой оценки качества оказания услуг организациями
-            Республики Беларусь
-          </div>
-          <h2>Оставить отзыв</h2>
-        </header>
         {/* <h3>Выберите организацию</h3> */}
         {/* <SearchForm /> */}
+        <Header heading="Оставить отзыв" />
         <OraganizationTabs />
         {/* <Geolocation /> */}
       </div>

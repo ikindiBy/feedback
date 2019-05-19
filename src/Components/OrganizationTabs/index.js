@@ -13,7 +13,7 @@ const OraganizationTabs = () => (
       <Tab>Расширенный поиск</Tab>
     </TabList>
 
-    <TabPanel>
+    <TabPanel className="TabPanel">
       <NearbyOrganizationsList />
     </TabPanel>
     <TabPanel>
