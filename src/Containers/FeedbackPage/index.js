@@ -110,7 +110,8 @@ class FeedbackPage extends Component {
                 name="textarea"
                 rows="10"
                 cols="50"
-                onChange={this.handleMailChange}
+                onChange={this.handleDescriptionChange}
+                value={this.state.description}
               />
             </div>
           </div>
@@ -121,6 +122,7 @@ class FeedbackPage extends Component {
                 type="text"
                 onChange={this.handleNameChange}
                 placeholder="Иван Иванов"
+                value={this.state.userName}
               />
             </div>
             <div className="personal-data">
@@ -129,13 +131,14 @@ class FeedbackPage extends Component {
                 type="email"
                 onChange={this.handleMailChange}
                 placeholder="some@mail.ru"
+                value={this.state.email}
               />
             </div>
           </div>
           <div className="form-bottom">
             <button>Отправить отзыв</button>
             <Link to={`/`}>
-              <button class="to-home">
+              <button className="to-home">
                 <i className="fa fa-home" aria-hidden="true" />
               </button>
             </Link>
