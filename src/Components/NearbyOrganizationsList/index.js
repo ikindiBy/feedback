@@ -28,7 +28,7 @@ class NearbyOrganizationsList extends Component {
   };
 
   onClick = () => {
-    this.props.increaseDistance(this.props.distance * 2);
+    this.props.increaseDistance(5);
     this.props.fetchData(URL_NEARBY_ORG, this.props.distance);
   };
 

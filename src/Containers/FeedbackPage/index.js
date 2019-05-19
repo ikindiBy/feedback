@@ -137,11 +137,6 @@ class FeedbackPage extends Component {
           </div>
           <div className="form-bottom">
             <button>Отправить отзыв</button>
-            <Link to={`/`}>
-              <button className="to-home">
-                <i className="fa fa-home" aria-hidden="true" />
-              </button>
-            </Link>
           </div>
         </form>
       </div>

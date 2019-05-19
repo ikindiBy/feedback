@@ -1,9 +1,7 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import "./Header.css";
-
-import SearchForm from "../../Components/SearchForm";
-import LogoHeader from "../../Components/LogoHeader";
 
 class Header extends Component {
   constructor(props) {
@@ -14,10 +12,12 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <div className="AppName">
-          Портал рейтинговой оценки качества оказания услуг организациями
-          Республики Беларусь
-        </div>
+        {/* <div className="AppName"> */}
+        {/* <Link to={`/`}>
+            Портал рейтинговой оценки качества оказания услуг организациями
+            Республики Беларусь
+          </Link> */}
+        {/* </div> */}
         <div className="PageTitle">
           <h2>{this.props.heading}</h2>
         </div>

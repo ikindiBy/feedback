@@ -1,14 +1,14 @@
 .ResultItem {
   width: 80%;
   min-height: 70px;
-  border: 1px var(--result-btn-color) solid;
+  border: 1px #eaedf5 solid;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   margin: 0 auto;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 .ResultItem div {
@@ -34,7 +34,7 @@
 }
 
 .ResultItem button {
-  background-color: #30B6DD;
+  background-color: #30b6dd;
   border: none;
   min-width: 155px;
   border-radius: 5px;
@@ -63,7 +63,7 @@
   height: 23px;
   width: 72px;
   border-radius: 9px;
-  background-color: #EAEDF5;
+  background-color: #eaedf5;
   display: flex;
   justify-content: center;
   align-items: center;
