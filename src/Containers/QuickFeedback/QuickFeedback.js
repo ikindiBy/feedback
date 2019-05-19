@@ -9,7 +9,13 @@ class QuickFeedback extends Component {
   render() {
     return (
       <div>
-        <h2>Оставить отзыв</h2>
+        <header>
+          <div className="AppName">
+            Портал рейтинговой оценки качества оказания услуг организациями
+            Республики Беларусь
+          </div>
+          <h2>Оставить отзыв</h2>
+        </header>
         {/* <h3>Выберите организацию</h3> */}
         {/* <SearchForm /> */}
         <OraganizationTabs />
