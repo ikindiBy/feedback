@@ -16,7 +16,10 @@ function App() {
       {/* <QuickFeedback />
       <NearbyOrganizationsList /> */}
       {/* <QRCodeComponent id="38270" /> */}
-      <Print />
+      <Print
+        organizationName="Главное управление юстиции Минского городского исполнительного комитета"
+        id="38270"
+      />
       {/* <Header />
       <Main />
       <Footer /> */}

@@ -1,0 +1,36 @@
+.Print {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+.Print button {
+    background-color: var(--result-btn-color);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 7px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 15px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.Print button:hover {
+    background-color: var( --result-btn-color-hover);
+}
+
+.Print div:last-child {
+    border: 1px solid;
+    width: 95%;
+    height: 100%;
+}
+
+.Print span {
+    color: blue;
+    text-decoration: underline;
+}

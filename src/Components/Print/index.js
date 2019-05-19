@@ -1,22 +1,27 @@
 import React, { Component } from "react";
-
 import ReactToPrint from "react-to-print";
 
 import QRCodeComponent from "../QRCode";
+import "./Print.css";
 
 class Print extends React.Component {
   render() {
+    const printedComponent = (
+      <QRCodeComponent
+        size="300"
+        id={this.props.id}
+        organizationName={this.props.organizationName}
+        ref={el => (this.componentRef = el)}
+      />
+    );
+
     return (
-      <div>
+      <div className="Print">
         <ReactToPrint
-          trigger={() => <a href="#">Print this out!</a>}
+          trigger={() => <button>Распечатать QR-код</button>}
           content={() => this.componentRef}
         />
-        <QRCodeComponent
-          size="500"
-          id="38270"
-          ref={el => (this.componentRef = el)}
-        />
+        {printedComponent}
       </div>
     );
   }
