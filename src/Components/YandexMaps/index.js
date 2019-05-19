@@ -15,7 +15,7 @@ class YandexMaps extends Component {
         map.setCenter(new window.YMaps.GeoPoint(lat, lng), 10);
         map.addOverlay(placemark);
         map.addControl(new window.YMaps.Zoom());
-        map.addControl(new window.YMaps.TypeControl());
+
         map.addControl(new window.YMaps.ToolBar());
         map.addControl(new window.YMaps.Zoom());
         map.addControl(new window.YMaps.MiniMap());

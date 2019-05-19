@@ -63,7 +63,7 @@ class DescriptionPage extends Component {
         {
           name && <Header heading={`${name}`} />
         }
-        <h5>{addr}</h5>
+        <h3>{addr}</h3>
         <div className="org-description">
           <div className="rating-cases">
             <RatingCase

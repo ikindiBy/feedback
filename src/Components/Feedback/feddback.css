@@ -7,12 +7,12 @@
     margin: 20px 50px;
 }
 .user-feedback-item .date-title {
-    color: green;
+    color: #51b788;
     font-weight: bold;
 }
 .user-feedback-item .user-title {
     text-align: left;
-    color: green;
+    color: #51b788;
     font-weight: bold;
 }
 .user-feedback-item hr.first-delimeter {
@@ -46,16 +46,16 @@
     text-align: left;
 }
 .user-feedback-item .org-title .response-date{
-    color: crimson;
+    color: #006080;
 }
 .user-feedback-item .org-title {
-    color: brown;
+    color: #008CBA;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .user-feedback-item .user-rate-title {
-    color: green;
+    color: #51b788;
     font-weight: bold;
 }
 .user-feedback-item .user-rate div{
@@ -75,7 +75,7 @@
 }
 .user-feedback-item .user-comment-title {
     text-align: left;
-    color: brown;
+    color: #008CBA;
     font-weight: bold;
     margin: 0 20px 10px 20px;
 }
