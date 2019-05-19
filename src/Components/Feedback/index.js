@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import './feddback.css';
+import Stars from "../Stars";
 
 class Feedback extends Component {
   constructor(props) {
@@ -8,6 +9,10 @@ class Feedback extends Component {
 
   getDate = date => {
     return `${new Date(date).getDate()}-${new Date(date).getMonth() + 1}-${new Date(date).getFullYear()}`
+  };
+
+  getRates = (rates) => {
+    return rates.reduce((a, b) => a + b) / rates.length;
   };
 
   render() {
@@ -26,11 +31,15 @@ class Feedback extends Component {
     return (
       <div id={id} className="user-feedback-item">
         <div className="feedback-title">
-          <div>
+          <div className="first-row">
             <span className="user-title">Пользователь:</span>
             <span className="user-name">{logged_user ? logged_user : quick_fb_username}</span>
           </div>
-          <div>
+          <div className="second-row">
+            <span className="user-rate-title">Рейтинг: </span>
+            <span className="user-rate"><Stars score={this.getRates(rates)} /></span>
+          </div>
+          <div className="third-row">
           <span className="date-title">Дата размещения:</span>
           <span className="date-name">{this.getDate(date)}</span>
         </div>

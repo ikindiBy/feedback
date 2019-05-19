@@ -1,7 +1,8 @@
 .user-feedback-item {
     border: 1px solid;
     border-radius: 25px;
-    margin: 0 20px;
+    margin: 10px 20px;
+    min-height: 100px;
     padding: 10px;
 }
 .user-feedback-item .date-title {
@@ -49,9 +50,45 @@
     margin-bottom: 10px;
 }
 
+.user-feedback-item .user-rate-title {
+    color: green;
+    font-weight: bold;
+}
+.user-feedback-item .user-rate div{
+    display: inline;
+}
+.user-feedback-item .third-row {
+    text-align: right;
+}
+.user-feedback-item .first-row {
+    text-align: left;
+}
+.user-feedback-item .first-row,
+.user-feedback-item .second-row,
+.user-feedback-item .third-row {
+    flex-basis: 33%;
+
+}
 .user-feedback-item .user-comment-title {
     text-align: left;
     color: brown;
     font-weight: bold;
     margin: 0 20px 10px 20px;
+}
+
+
+@media screen and (max-width: 880px) {
+    html .user-feedback-item .first-row,
+    html .user-feedback-item .second-row,
+    html .user-feedback-item .third-row {
+        text-align: left;
+    }
+
+    html .user-feedback-item .second-row {
+        margin: 0 20px;
+    }
+
+    html .user-feedback-item .feedback-title {
+        display: inline;
+    }
 }
