@@ -16,18 +16,19 @@
   margin: 10px;
 }
 
-.ResultItem div:first-child {
-  flex-basis: 40%;
+.ResultItem a:first-child {
+  flex-basis: 65%;
   text-align: left;
 }
 
 .ResultItem div:last-child {
-  flex-basis: 10%;
+  /* flex-basis: 10%; */
 }
 
 .ResultItem button {
   background-color: var(--result-btn-color);
   border: none;
+  min-width: 145px;
   border-radius: 5px;
   color: white;
   padding: 7px 18px;
