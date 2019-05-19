@@ -5,8 +5,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   margin: 0 auto;
+  background-color: #FFFFFF;
 }
 
 .ResultItem div {
@@ -17,16 +19,22 @@
 }
 
 .ResultItem a:first-child {
-  flex-basis: 65%;
+  flex-basis: 60%;
   text-align: left;
+  color: #656775;
+  font-family: "Source Sans Pro";
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  line-height: 20px;
 }
 
 .ResultItem div:last-child {
-  /* flex-basis: 10%; */
+  flex-basis: 10%;
 }
 
 .ResultItem button {
-  background-color: var(--result-btn-color);
+  background-color: #30B6DD;
   border: none;
   min-width: 145px;
   border-radius: 5px;
@@ -49,6 +57,20 @@
   /* color: grey; */
 }
 
-.checked {
-  color: orange;
+.ReviewWrapper {
+  height: 23px;
+  width: 72px;
+  border-radius: 9px;
+  background-color: #EAEDF5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Review {
+  color: #656775;
+  font-family: "Source Sans Pro";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18px;
 }
