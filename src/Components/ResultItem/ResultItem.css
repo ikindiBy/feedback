@@ -36,7 +36,7 @@
 .ResultItem button {
   background-color: #30B6DD;
   border: none;
-  min-width: 145px;
+  min-width: 155px;
   border-radius: 5px;
   color: white;
   padding: 7px 18px;
@@ -47,6 +47,8 @@
   margin: 5px 2px;
   transition-duration: 0.4s;
   cursor: pointer;
+  font-family: "Source Sans Pro";
+  font-size: 17px;
 }
 
 .ResultItem button:hover {
