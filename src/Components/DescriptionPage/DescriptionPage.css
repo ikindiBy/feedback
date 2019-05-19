@@ -3,16 +3,56 @@
   width: 60%;
 }
 
-.description a {
-  margin: 10px;
+.description h2 {
+    color: #000;
+}
+.description a:before {
+
 }
 
-.navigation i {
+.description .org-navigation a:nth-child(2)  .fa-home {
+    line-height: initial;
+}
+
+.description .org-navigation a:first-child  .fa-pen,
+.description .org-navigation a:nth-child(2) .fa-home,
+.description .org-navigation a:nth-child(3)  .fa-qrcode {
+    margin-right: 5px;
+}
+
+.description .one-rating-case {
+    font-size: 20px;
+    border: 1px solid;
+    padding: 0 20px;
+    margin: 20px auto;
+    border-radius: 20px;
+}
+
+.description .org-navigation a {
+  font-weight: 600;
+  letter-spacing: -0.1px;
+  line-height: 36px;
+    background-color: var(--result-btn-color);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 7px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.description .org-navigation i {
   color: #000;
 }
 
-.navigation {
+.description .org-navigation {
   display: flex;
+  margin: 30px 50px;
   align-items: center;
   justify-content: center;
 }
@@ -21,4 +61,45 @@
   .description .rating-cases {
     width: 90%;
   }
+}
+.org-description .rating-cases {
+    margin: auto 0;
+}
+
+@media screen and (max-width: 900px) {
+    .description .org-navigation {
+    display: flex;
+    margin: 30px auto;
+    flex-direction: column;
+    width: 100%;
+    }
+
+    .description .org-description .one-rating-case {
+        width: 100%;
+    }
+    .description .org-description .rating-cases {
+        margin: auto  0 !important;
+        width: 100%;
+    }
+
+    .description .org-navigation a {
+        width: 80%;
+    }
+
+    .description .org-description {
+        display: block;
+    }
+
+    .description .org-description .rating-cases,
+    .description .org-description #YMapsID {
+        margin: 10px auto;
+        width: 100%;
+    }
+}
+
+.org-description {
+    margin: 0 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }

@@ -1,9 +1,10 @@
 .user-feedback-item {
-    border: 1px solid;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
     border-radius: 25px;
-    margin: 10px 20px;
     min-height: 100px;
     padding: 10px;
+    margin: 20px 50px;
 }
 .user-feedback-item .date-title {
     color: green;
@@ -14,7 +15,10 @@
     color: green;
     font-weight: bold;
 }
-.user-feedback-item hr {
+.user-feedback-item hr.first-delimeter {
+    width: 96%;
+}
+.user-feedback-item hr.second-delimeter {
     width: 90%;
 }
 .user-feedback-item .feedback-title {
@@ -24,10 +28,10 @@
     justify-content: space-around;
 }
 .user-feedback-item .feedback-title .user-title {
-    margin: 0 20px;
+    margin: 0 0 0 20px;
 }
 .user-feedback-item .feedback-title .date-title {
-    margin: 0 20px;
+    margin: 0 0 0 20px;
 }
 
 .user-feedback-item .comment {
@@ -45,7 +49,7 @@
     color: crimson;
 }
 .user-feedback-item .org-title {
-    color: blue;
+    color: brown;
     font-weight: bold;
     margin-bottom: 10px;
 }
@@ -77,7 +81,7 @@
 }
 
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 950px) {
     html .user-feedback-item .first-row,
     html .user-feedback-item .second-row,
     html .user-feedback-item .third-row {

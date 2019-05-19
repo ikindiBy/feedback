@@ -32,7 +32,7 @@ class Feedback extends Component {
       <div id={id} className="user-feedback-item">
         <div className="feedback-title">
           <div className="first-row">
-            <span className="user-title">Пользователь:</span>
+            <span className="user-title">Пользователь: </span>
             <span className="user-name">{logged_user ? logged_user : quick_fb_username}</span>
           </div>
           <div className="second-row">
@@ -40,17 +40,17 @@ class Feedback extends Component {
             <span className="user-rate"><Stars score={this.getRates(rates)} /></span>
           </div>
           <div className="third-row">
-          <span className="date-title">Дата размещения:</span>
+          <span className="date-title">Дата размещения: </span>
           <span className="date-name">{this.getDate(date)}</span>
         </div>
         </div>
-        <hr />
+        <hr className="first-delimeter"/>
         <div className="user-comment-title">Комментарий: </div>
         {
           comment && <div className="comment">{comment}</div>
         }
         {
-          hasResponse && <hr/>
+          hasResponse && <hr className="second-delimeter"/>
         }
         {
           hasResponse &&

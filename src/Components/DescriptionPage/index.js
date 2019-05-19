@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import FeedbackItem from "../Feedback";
+import YandexMaps from "../YandexMaps";
 
 import "./DescriptionPage.css";
 
@@ -52,52 +53,55 @@ class DescriptionPage extends Component {
       avg_overalest,
       avg_polite,
       avg_speed,
-      feedbacks
+      feedbacks,
+      coordx,
+      coordy
     } = this.state.org;
-
     return (
       <div className="description">
         <h2>{name}</h2>
         <h5>{addr}</h5>
-        <div className="rating-cases">
-          <RatingCase
-            pointForEstimation={"Общая оценка"}
-            point={1}
-            setScore={this.setCommonScore}
-            score={Math.round(avg_overalest)}
-          />
-          <RatingCase
-            pointForEstimation={"Простота процесса"}
-            point={2}
-            setScore={this.setComplexityScore}
-            score={Math.round(avg_diffproc)}
-          />
-          <RatingCase
-            pointForEstimation={"Скорость отзыва"}
-            point={3}
-            setScore={this.setSpeedScore}
-            score={Math.round(avg_speed)}
-          />
-          <RatingCase
-            pointForEstimation={"Вежливость"}
-            point={4}
-            setScore={this.setPolitinessScore}
-            score={Math.round(avg_polite)}
-          />
+        <div className="org-description">
+          <div className="rating-cases">
+            <RatingCase
+              pointForEstimation={"Общая оценка"}
+              point={1}
+              setScore={this.setCommonScore}
+              score={Math.round(avg_overalest)}
+            />
+            <RatingCase
+              pointForEstimation={"Простота процесса"}
+              point={2}
+              setScore={this.setComplexityScore}
+              score={Math.round(avg_diffproc)}
+            />
+            <RatingCase
+              pointForEstimation={"Скорость отзыва"}
+              point={3}
+              setScore={this.setSpeedScore}
+              score={Math.round(avg_speed)}
+            />
+            <RatingCase
+              pointForEstimation={"Вежливость"}
+              point={4}
+              setScore={this.setPolitinessScore}
+              score={Math.round(avg_polite)}
+            />
+          </div>
+          { coordx && <YandexMaps lng={coordx} lat={coordy} /> }
         </div>
-
-        {this.renderComments(feedbacks)}
-        <div className="navigation">
+        <div className="org-navigation">
           <Link to={`/feedback/${id}/${name}`}>
-            <span>Оценить организацию</span>
+            <span><i className="fa fa-pen fa-1x" aria-hidden="true" />Оценить организацию</span>
           </Link>
           <Link to={`/`}>
-            <i className="fa fa-home fa-2x" aria-hidden="true" />
+            <span><i className="fa fa-home fa-1x" aria-hidden="true" />На главную</span>
           </Link>
           <Link to={`/QRmaker/${id}/${name}`}>
-            <span>Создать QR-code</span>
+            <span> <i className="fa fa-qrcode fa-1x" aria-hidden="true" />Создать QR-code</span>
           </Link>
         </div>
+        {this.renderComments(feedbacks)}
       </div>
     );
   }
