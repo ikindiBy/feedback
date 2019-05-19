@@ -7,6 +7,7 @@ import YandexMaps from "../YandexMaps";
 import "./DescriptionPage.css";
 
 import RatingCase from "../../Components/RatingCase";
+import Header from "../../Containers/Header";
 
 class DescriptionPage extends Component {
   constructor(props) {
@@ -59,7 +60,9 @@ class DescriptionPage extends Component {
     } = this.state.org;
     return (
       <div className="description">
-        <h2>{name}</h2>
+        {
+          name && <Header heading={`${name}`} />
+        }
         <h5>{addr}</h5>
         <div className="org-description">
           <div className="rating-cases">
