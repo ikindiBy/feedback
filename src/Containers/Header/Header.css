@@ -2,14 +2,15 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: flex-start;
   height: 75px;
-  background-color: #51B788;
+  background-color: #51b788;
 }
 
 .AppName {
   height: 36px;
-  width: 210px;
-  color: #ADFCD7;
+  width: 250px;
+  color: #adfcd7;
   font-family: "Source Sans Pro";
   font-size: 12px;
   font-weight: bold;
@@ -17,6 +18,12 @@ header {
   position: absolute;
   left: 20px;
   text-align: left;
+}
+
+.PageTitle {
+  width: 70%;
+  position: absolute;
+  left: 300px;
 }
 
 h2 {

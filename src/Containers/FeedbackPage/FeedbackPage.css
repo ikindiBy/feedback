@@ -1,24 +1,138 @@
 form {
-  margin: 0 auto;
+  width: 90%;
+  padding: 20px;
+  background-color: #ffffff;
+  margin: 20px auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+form button {
+  height: 32px;
+  background-color: var(--result-btn-color);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 7px 18px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 5px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+form button i {
+  color: white;
+}
+
+.to-home {
+  margin-right: 32px;
+}
+
+form button i:hover {
+  color: rgb(0, 0, 0);
 }
 
 .rating-cases {
-  width: 100%;
+  width: 50%;
+}
+
+.form-top .one-rating-case {
+  margin: 0;
 }
 
 .descriptionFeedback {
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 15px;
+  font-family: "Source Sans Pro";
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  line-height: 18px;
+}
+
+.descriptionFeedback textarea {
+  margin-top: 5px;
 }
 
 .personal-data {
   width: 50%;
   margin-bottom: 15px;
+  font-family: "Source Sans Pro";
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  line-height: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+textarea,
+.form-middle input {
+  border: 1px solid #c0c3ce;
+  border-radius: 3px;
+  background-color: #ffffff;
+}
+
+.form-middle input {
+  margin-top: 5px;
+  height: 30px;
+  width: 90%;
+}
+
+.form-top {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 15px 0;
+}
+
+.form-middle {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.form-bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 600px) {
+  .form-top,
+  .form-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .rating-cases {
+    width: 90%;
+  }
+
+  .rating-cases,
+  .descriptionFeedback,
+  .personal-data {
+    width: 90%;
+  }
 }

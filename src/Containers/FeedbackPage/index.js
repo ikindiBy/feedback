@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import "./FeedbackPage.css";
 
 import RatingCase from "../../Components/RatingCase";
-import Print from "../../Components/Print";
+import Header from "../../Containers/Header";
 
 class FeedbackPage extends Component {
   constructor(props) {
@@ -20,16 +20,6 @@ class FeedbackPage extends Component {
       ratingPolitiness: 1
     };
   }
-  /*
-  overalEstimation: action.payload.overalEstimation,
-        difficultingProc: action.payload.difficultingProc,
-        speed: action.payload.speed,
-        polite: action.payload.polite,
-        hasRecomended: action.payload.hasRecomended,
-        description: action.payload.description,
-        nameUser: action.payload.nameUser,
-        emailUser: action.payload.emailUser
-*/
 
   handleSubmit = event => {
     event.preventDefault();
@@ -87,74 +77,71 @@ class FeedbackPage extends Component {
   render() {
     console.log("------> ", this.state.overalEstimation);
     return (
-//       <Print
-//         organizationName="Главное управление юстиции Минского городского исполнительного комитета"
-//         id="38270"
-//       />
       <div>
-        <h2>Мой отзыв о {this.props.match.params.name}</h2>
+        <Header heading={`Мой отзыв о ${this.props.match.params.name}`} />
         <form onSubmit={this.handleSubmit}>
-          <div className="rating-cases">
-            <RatingCase
-              pointForEstimation={"Общая оценка"}
-              point={1}
-              setScore={this.setCommonScore}
-            />
-            <RatingCase
-              pointForEstimation={"Простота процесса"}
-              point={2}
-              setScore={this.setComplexityScore}
-            />
-            <RatingCase
-              pointForEstimation={"Скорость отзыва"}
-              point={3}
-              setScore={this.setSpeedScore}
-            />
-            <RatingCase
-              pointForEstimation={"Вежливость"}
-              point={4}
-              setScore={this.setPolitinessScore}
-            />
+          <div className="form-top">
+            <div className="rating-cases">
+              <RatingCase
+                pointForEstimation={"Общая оценка"}
+                point={1}
+                setScore={this.setCommonScore}
+              />
+              <RatingCase
+                pointForEstimation={"Простота процесса"}
+                point={2}
+                setScore={this.setComplexityScore}
+              />
+              <RatingCase
+                pointForEstimation={"Скорость отзыва"}
+                point={3}
+                setScore={this.setSpeedScore}
+              />
+              <RatingCase
+                pointForEstimation={"Вежливость"}
+                point={4}
+                setScore={this.setPolitinessScore}
+              />
+            </div>
+
+            <div className="descriptionFeedback">
+              <label>Рассказать подробнее</label>
+              <textarea
+                name="textarea"
+                rows="10"
+                cols="50"
+                onChange={this.handleMailChange}
+              />
+            </div>
           </div>
-          {/* <div>
-            <p>Вы бы порекомендовали друзьям обращаться в эту организацию?</p>
-            <button>да</button>
-            <button>нет</button>
-          </div> */}
-          <div className="descriptionFeedback">
-            <label>Расскажите подробнее</label>
-            <textarea
-              name="textarea"
-              rows="10"
-              cols="50"
-              onChange={this.handleMailChange}
-            />
+          <div className="form-middle">
+            <div className="personal-data">
+              <label>Ваше имя</label>
+              <input
+                type="text"
+                onChange={this.handleNameChange}
+                placeholder="Иван Иванов"
+              />
+            </div>
+            <div className="personal-data">
+              <label>e-mail</label>
+              <input
+                type="email"
+                onChange={this.handleMailChange}
+                placeholder="some@mail.ru"
+              />
+            </div>
           </div>
-          <div className="personal-data">
-            <label>Ваше имя</label>
-            <input
-              type="text"
-              //   value={"sdsd"}
-              onChange={this.handleNameChange}
-              placeholder="Иван Иванов"
-            />
+          <div className="form-bottom">
+            <button>Отправить отзыв</button>
+            <Link to={`/`}>
+              <button class="to-home">
+                <i className="fa fa-home" aria-hidden="true" />
+              </button>
+            </Link>
           </div>
-          <div className="personal-data">
-            <label>e-mail</label>
-            <input
-              type="email"
-              //   value={"sdsd"}
-              onChange={this.handleMailChange}
-              placeholder="some@mail.ru"
-            />
-          </div>
-          <button>Отправить отзыв</button>
-          <Link to={`/`}>
-            <button type="submit">Вернуться на главную</button>
-          </Link>
         </form>
       </div>
-
     );
   }
 }

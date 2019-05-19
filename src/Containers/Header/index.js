@@ -18,7 +18,9 @@ class Header extends Component {
           Портал рейтинговой оценки качества оказания услуг организациями
           Республики Беларусь
         </div>
-        <h2>Оставить отзыв</h2>
+        <div className="PageTitle">
+          <h2>{this.props.heading}</h2>
+        </div>
       </header>
     );
   }

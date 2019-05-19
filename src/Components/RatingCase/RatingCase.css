@@ -6,3 +6,11 @@
   justify-content: space-between;
   align-items: center;
 }
+
+h5 {
+  font-family: "Source Sans Pro";
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  line-height: 18px;
+}
