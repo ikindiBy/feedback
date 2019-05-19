@@ -1,6 +1,9 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+// import "font-awesome/css/font-awesome.min.css";
 
 import "./ResultItem.css";
+import Stars from "../Stars";
 
 class ResultItem extends Component {
   constructor(props) {
@@ -11,17 +14,13 @@ class ResultItem extends Component {
   render() {
     return (
       <div className="ResultItem">
-        <div>Администрация г.Витебска</div>
-        <div>
-          <span className="fa fa-star checked" />
-          <span className="fa fa-star checked" />
-          <span className="fa fa-star checked" />
-          <span className="fa fa-star" />
-          <span className="fa fa-star" />
-        </div>
+        <div>{this.props.organizationName}</div>
+        <Stars score={1 + Math.random() * 5} />
         <div>12 reviews</div>
         <div>
-          <button>Оставить отзыв</button>
+          <Link to={`/feedback/${this.props.organizationName}`}>
+            <button>Оставить отзыв</button>
+          </Link>
         </div>
       </div>
     );
